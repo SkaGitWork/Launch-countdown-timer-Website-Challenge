@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+/* ---------------------------------- Mixin --------------------------------- */
+
+@mixin box_creator($width, $max_width) {
+  .onHover:hover .number {
+      transition: transform 1s;
+      transform: translateY(-30px);
+    }
+  .onHover:hover .box--animation {
+      transition: transform 1s;
+      transform: translateY(-30px);
+    }
+  .box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: $width;
+    height: $width;
+    max-width: $max_width;
+    max-height: $max_width;
+
+    user-select: none;
+
+
+    &--animation {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient($top_color 50%, $bottom_color 50%);
+      border-radius: 5px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        background-color: $bg_color;
+        width: 10px;
+        aspect-ratio: 1/1;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 0 50% 50% 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        background-color: $bg_color;
+        width: 10px;
+        aspect-ratio: 1/1;
+        right: 0;
+        transform: translate(50%, -50%);
+        border-radius: 50% 0 0 50%;
+        z-index: 1;
+      }
+    }
+  }
+
+  .shadow {
+    position: absolute;
+    top: 50%;
+    width: $width;
+    height: 60%;
+    max-width: $max_width;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.25) 100%
+    );
+
+    border-radius: 5px;
+    z-index: -1;
+    transition: height 1s;
+  }
+}
+
+/* -------------------------------- Variables ------------------------------- */
+$heading_color: white;
+$date_color: hsl(237, 18%, 59%);
+$number_color: hsl(345, 95%, 68%);
+
+$top_color: hsl(235, 16%, 14%);
+$bottom_color: hsl(236, 21%, 26%);
+$bg_color: hsl(234, 17%, 12%);
+
+$test: #231d2b;

@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+/* ---------------------------------- Mixin --------------------------------- */
+/* -------------------------------- Variables ------------------------------- */
+/* --------------------------------- Global --------------------------------- */
+* {
+  font-family: "Red Hat Text", sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #191a24;
+  background-image: url("images/bg-stars.svg");
+}
+
+.socialMedia svg {
+  color: #8486a9;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* --------------------------------- wrapper -------------------------------- */
+.wrapper {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --------------------------------- Header --------------------------------- */
+.header {
+  padding: 20vh 2rem 0;
+  margin: 0 auto 7.5vh;
+}
+
+.heading {
+  color: white;
+  font-weight: 700;
+  letter-spacing: 7px;
+  line-height: 1.7rem;
+  font-size: 1.1rem;
+  font-size: Min(5vw, 1.2rem);
+}
+
+/* --------------------------------- Content -------------------------------- */
+.number-container {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 2.5rem;
+  padding: 0 1rem;
+}
+
+.number {
+  color: #fb6087;
+  font-size: Min(10vw, 60px);
+  mix-blend-mode: screen;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+/* ----------------------------------- Box ---------------------------------- */
+.onHover:hover .number {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+
+.onHover:hover .box--animation {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+
+.box {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 18vw;
+  height: 18vw;
+  max-width: 130px;
+  max-height: 130px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.box--animation {
+  position: absolute;
+  inset: 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #1e1f29), color-stop(50%, #343650));
+  background: linear-gradient(#1e1f29 50%, #343650 50%);
+  border-radius: 5px;
+}
+
+.box--animation::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  background-color: #191a24;
+  width: 10px;
+  aspect-ratio: 1/1;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 0 50% 50% 0;
+}
+
+.box--animation::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  background-color: #191a24;
+  width: 10px;
+  aspect-ratio: 1/1;
+  right: 0;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  border-radius: 50% 0 0 50%;
+  z-index: 1;
+}
+
+.shadow {
+  position: absolute;
+  top: 50%;
+  width: 18vw;
+  height: 60%;
+  max-width: 130px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.25)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.25) 100%);
+  border-radius: 5px;
+  z-index: -1;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.date {
+  position: absolute;
+  bottom: -3rem;
+  color: #8486a9;
+  font-size: Min(2vw, 20px);
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 768px) {
+  .date {
+    bottom: -5rem;
+  }
+}
+
+/* --------------------------------- Footer --------------------------------- */
+.footer {
+  background-image: url("images/pattern-hills.svg");
+  background-repeat: repeat-x;
+  background-position: right -210px bottom 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 20vh;
+  padding-top: 10vh;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 1224px) {
+  .footer {
+    background-position: unset;
+    background-position: bottom;
+  }
+}
+
+.socialMedia {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.socialMedia svg:hover path {
+  fill: #fb6087;
+}
+/*# sourceMappingURL=style.css.map */
